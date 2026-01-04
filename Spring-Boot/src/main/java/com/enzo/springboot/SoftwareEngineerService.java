@@ -18,4 +18,14 @@ public class SoftwareEngineerService {
         return softwareEngineerRepository.findAll();
     }
 
+    public void insertSoftwareEngineer(SoftwareEngineer softwareEngineer) {
+
+        softwareEngineerRepository.save(softwareEngineer);
+
+    }
+
+
+    public SoftwareEngineer getSoftwareEngineersByID(Integer id) {
+        return softwareEngineerRepository.findById(id).orElseThrow(() -> new IllegalStateException(id + " not found"));
+    }
 }
